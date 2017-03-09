@@ -1,0 +1,88 @@
+# Reservation system to book airline and hotel tickets .
+
+class reservation(object):
+
+    def __init__(self ,name ,  hotel , airline , rate ):
+
+        self.name = name
+        self.hotel = hotel
+
+        self.airline = airline
+
+        self.rate   = rate
+
+    def describe(self):
+        print self.name
+        print self.hotel
+        print self.airline
+        print self.rate
+
+
+
+
+aa = reservation("KK", "gg" , "jj" , 2)
+
+print aa.describe()# since here i have given very basic introduction
+
+
+class airline(reservation): # some description of airline variety
+
+    def __init__(self, name  , airline_first_class , airline_second_class,rate_first_class, rate_second_class):
+
+        self.name = name
+        self.airline_first_class = airline_first_class
+        self.airline_second_class = airline_second_class
+        self.rate_first_class = rate_first_class
+        self.rate_second_class = rate_second_class
+
+
+    def display(self):
+        print  self.name
+        print  self.airline_first_class
+        print  self.airline_second_class
+        print  self.rate_first_class
+        print  self.rate_second_class
+
+BB = airline("Indian-Airways", "Executive", "Economy", 2000, 1000)
+
+print BB.display()
+
+
+
+class hotel(reservation):# general hotel description
+
+    def __init__(self, name, luxirious , economy , luxirious_fare  , economy_fare):
+        self.name = name
+        self.luxirious = luxirious
+        self.economy = economy
+        self.luxirious_fare = luxirious_fare
+        self.economy_fare   = economy_fare
+
+
+    def display(self):
+        print self.name
+        print self.luxirious
+        print self.economy
+        print self.luxirious_fare
+        print self.economy_fare
+
+CC = hotel("Radison" , "Bussiness_suit" , "Normal", 1200 , 300)
+
+print CC.display()
+
+# Keep track of when rooms will be available and can be scheduled.
+print "There are 10 luxirious rooms and 10 economy rooms are available"
+n_lux = int(raw_input("How  many rooms you want to booked:"))
+n_eco = int(raw_input("How many rooms you want to booked:"))
+
+print n_lux
+print n_eco
+
+
+
+class availability(reservation):
+
+    def __init__(self):
+        self.luxirious_room = luxirious_room
+        self.economy_room   = economy_room
+
